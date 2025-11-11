@@ -1,0 +1,70 @@
+/* Contenedor principal */
+.container-roles {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* empieza desde arriba */
+  padding: 40px 20px;
+  background: url('../../../assets/imagenes/libro.jpg') no-repeat center center;
+  background-size: cover;
+  box-sizing: border-box;
+  gap: 2rem; /* espacio entre los cards */
+}
+
+/* Estilo general de los mat-card */
+.example-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.95); /* fondo blanco semi-transparente */
+  color: #000;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  padding: 1rem;
+}
+
+/* Título de los cards */
+mat-card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Formulario interno */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* espacio entre campos y botón */
+}
+
+/* Estilo para mat-form-field */
+mat-form-field {
+  width: 100%;
+}
+
+/* Botones */
+button[mat-raised-button] {
+  width: 100%;
+  font-weight: 600;
+  padding: 10px;
+}
+
+button[color="accent"] {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+/* Material icons dentro de los botones */
+button mat-icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Responsive: en pantallas pequeñas, que los cards ocupen casi todo */
+@media (max-width: 600px) {
+  .example-card {
+    max-width: 90%;
+  }
+}

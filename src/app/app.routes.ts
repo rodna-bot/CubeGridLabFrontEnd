@@ -16,6 +16,9 @@ import {
 import {CursosUserComponent} from './componente/cursos-user-component/cursos-user-component';
 import {InscribirseCursoComponent} from './componente/inscribirse-curso-component/inscribirse-curso-component';
 import {CursosInscritosComponent} from './componente/cursos-inscritos-component/cursos-inscritos-component';
+import {NanosateliteComponent} from './componente/nanosatelite-component/nanosatelite-component';
+import {Component} from '@angular/core';
+import {Componentes} from './model/componentes';
 
 export const routes: Routes = [
   {path: '' , component: IniciarSesionComponent, pathMatch: 'full'},
@@ -33,4 +36,6 @@ export const routes: Routes = [
   {path: 'inscribirse-curso', component: InscribirseCursoComponent},
   {path: 'cursos-inscritos', component: CursosInscritosComponent},
   {path: 'proyectos', component: ProyectosComponent},
+  {path: 'nanosatelite', component: NanosateliteComponent},
+  {path: 'componentes', component : Componentes},
 ];
