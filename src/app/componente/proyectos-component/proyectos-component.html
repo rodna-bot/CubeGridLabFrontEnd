@@ -1,7 +1,7 @@
 <div class="Proyectos_Componentes">
-  <h2>Listado de Cursos</h2>
+  <h2>Listado de Proyectos</h2>
 </div>
-<div class="container-usuarios-componente">
+<div class="container-proyectos-componente">
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -14,7 +14,7 @@
 
       <!-- Username Column -->
       <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del curso </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del proyecto </th>
         <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
       </ng-container>
 
@@ -24,11 +24,36 @@
         <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
       </ng-container>
 
+      <!-- Password Column -->
+      <ng-container matColumnDef="fecha-creacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de creacion </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+      </ng-container>
+
+      <!-- Password Column -->
+      <ng-container matColumnDef="codigo-usuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Codigo de usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+      </ng-container>
+
+      <!-- Password Column -->
+      <ng-container matColumnDef="codigo-curso">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Codigo de curso </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+      </ng-container>
+
+      <!-- Password Column -->
+      <ng-container matColumnDef="codigo-nanosatelite">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Codigo de nanosatelite </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+      </ng-container>
+
+
       <!-- Acción: Editar -->
       <ng-container matColumnDef="accion1">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button [routerLink]="['/editar-curso', element.codigo]">
+          <button mat-raised-button [routerLink]="['/editar-proyecto', element.codigo]">
             <span class="material-icons">edit</span>
           </button>
           <button mat-raised-button (click)="eliminarProyecto(element.codigo)">
@@ -46,13 +71,10 @@
     <!-- Contenedor flex para paginador y botón -->
     <div class="paginator-container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
       <!-- Botón agregar curso alineado a la izquierda -->
-      <button mat-raised-button color="primary" [routerLink]="'/agregar-curso'">
-        <span class="material-icons">book</span> Agregar Curso
+      <button mat-raised-button color="primary" [routerLink]="'/registrar-proyectos'">
+        <span class="material-icons">book</span> Registrar proyectos
       </button>
-      <!-- Botón agregar usuario alineado a la izquierda -->
-      <button mat-raised-button color="primary" [routerLink]="'/asignar-usuario-curso'">
-        <span class="material-icons">assignment_ind</span> Asignar curso a usuario
-      </button>
+
 
       <!-- Paginador alineado a la derecha -->
       <mat-paginator

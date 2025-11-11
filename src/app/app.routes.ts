@@ -19,6 +19,11 @@ import {CursosInscritosComponent} from './componente/cursos-inscritos-component/
 import {NanosateliteComponent} from './componente/nanosatelite-component/nanosatelite-component';
 import {Component} from '@angular/core';
 import {Componentes} from './model/componentes';
+import {ProyectoHome} from './componente/proyecto-home/proyecto-home';
+import {EditarProyecto} from './componente/editar-proyecto/editar-proyecto';
+import {EditarNanosatelite} from './componente/editar-nanosatelite/editar-nanosatelite';
+import {RegistrarProyecto} from './componente/registrar-proyecto/registrar-proyecto';
+import {RegistrarNanosatelite} from './componente/registrar-nanosatelite/registrar-nanosatelite';
 
 export const routes: Routes = [
   {path: '' , component: IniciarSesionComponent, pathMatch: 'full'},
@@ -38,4 +43,10 @@ export const routes: Routes = [
   {path: 'proyectos', component: ProyectosComponent},
   {path: 'nanosatelite', component: NanosateliteComponent},
   {path: 'componentes', component : Componentes},
+  {path: 'proyecto-home', component : ProyectoHome},
+  {path: 'simulaciones', component : Componentes},
+  {path: 'editar-proyecto', component : EditarProyecto},
+  {path: 'registrar-proyecto', component : RegistrarProyecto},
+  {path: 'editar-nanosatelite', component : EditarNanosatelite},
+  {path: 'registrar-nanosatelite', component : RegistrarNanosatelite},
 ];

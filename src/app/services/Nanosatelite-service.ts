@@ -19,7 +19,7 @@ export class NanosateliteService {
   constructor() {
   }
 
-  registrar(nanosatelite: Nanosatelite): Observable<any> {
+  registrar(nanosatelite: Omit<Nanosatelite, 'codigo'>): Observable<any> {
     const token = localStorage.getItem('token'); // Obtiene el token guardado
     const headers = {Authorization: `Bearer ${token}`}; // Cabecera JWT estándar
     return this.httpClient.post(`${this.url}/nanosatelite/registrar`, nanosatelite, {headers});

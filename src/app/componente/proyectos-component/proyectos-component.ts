@@ -1,6 +1,7 @@
 import {Component, inject, ViewChild} from '@angular/core';
 import {Proyectos} from '../../model/proyecto';
 import {
+  MatHeaderCellDef,
   MatCell,
   MatCellDef,
   MatColumnDef,
@@ -18,6 +19,7 @@ import {MatButton} from '@angular/material/button';
 @Component({
   selector: 'app-proyectos-component',
   imports: [
+    MatHeaderCellDef,
     MatButton,
     MatCell,
     MatCellDef,
@@ -38,7 +40,7 @@ import {MatButton} from '@angular/material/button';
 })
 export class ProyectosComponent {
 lista: Proyectos[] =[];
-displayedColumns: string[] = ['codigo', 'nombre', 'descripcion','fecha de creacion','codigo de usuario','codigo de curso','codigo de nanosatelite'];
+displayedColumns: string[] = ['codigo', 'nombre', 'descripcion','fecha-creacion','codigo-usuario','codigo-curso','codigo-nanosatelite'];
 dataSource: MatTableDataSource<Proyectos> = new MatTableDataSource<Proyectos>();
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;

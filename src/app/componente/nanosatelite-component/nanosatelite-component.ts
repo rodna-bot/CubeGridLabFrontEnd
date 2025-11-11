@@ -4,7 +4,7 @@ import {
   MatCell,
   MatCellDef,
   MatColumnDef,
-  MatHeaderCell,
+  MatHeaderCell, MatHeaderCellDef,
   MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef, MatTable,
   MatTableDataSource
 } from '@angular/material/table';
@@ -19,9 +19,11 @@ import {Proyectos} from '../../model/proyecto';
 import {ProyectosService} from '../../services/proyectos-service';
 import {NanosateliteService} from '../../services/Nanosatelite-service';
 
+
 @Component({
   selector: 'app-nanosatelite-component',
   imports: [
+    MatHeaderCellDef,
     MatButton,
     MatCell,
     MatCellDef,
@@ -42,7 +44,7 @@ import {NanosateliteService} from '../../services/Nanosatelite-service';
 })
 export class NanosateliteComponent {
   lista: Nanosatelite[] = [];
-  displayedColumns: string[] = ['codigo', 'tipo', 'precio'];
+  displayedColumns: string[] = ['codigo', 'tipo', 'precio' ,'accion1'];
   dataSource: MatTableDataSource<Nanosatelite> = new MatTableDataSource<Nanosatelite>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -61,16 +63,13 @@ export class NanosateliteComponent {
     })
   }
 
-  eliminarProyecto(codigo: number) {
+   eliminarNanosatelite(codigo: number) {
     if (confirm('¿Seguro que desea eliminar este nanosatelite?')) {
       this.nanosatelite.eliminar(codigo).subscribe({
         next: () => {
           this.dataSource.data = this.dataSource.data.filter(n => n.codigo !== codigo);
         },
-        error: err => console.error('Error al eliminar curso', err)
+        error: err => console.error('Error al eliminar el nanosatelite', err)
       });
     }
-  }
-
-
-}
+  }}
