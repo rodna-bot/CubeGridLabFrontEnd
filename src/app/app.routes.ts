@@ -21,9 +21,13 @@ import {Component} from '@angular/core';
 import {Componentes} from './model/componentes';
 import {ProyectoHome} from './componente/proyecto-home/proyecto-home';
 import {EditarProyecto} from './componente/editar-proyecto/editar-proyecto';
-import {EditarNanosatelite} from './componente/editar-nanosatelite/editar-nanosatelite';
+import {EditarNanosatelite} from './componente/editar-nanosatelite/editar-nanosatelite-component';
 import {RegistrarProyecto} from './componente/registrar-proyecto/registrar-proyecto';
 import {RegistrarNanosatelite} from './componente/registrar-nanosatelite/registrar-nanosatelite';
+import {SimulacionComponent} from './componente/simulacion-component/simulacion-component';
+import {ComponentesComponent} from './componente/componentes-component/componentes-component';
+import {AgregarComponenteComponent} from './componente/agregar-componente-component/agregar-componente-component';
+import {EditarComponenteComponent} from './componente/editar-componente-component/editar-componente-component';
 
 export const routes: Routes = [
   {path: '' , component: IniciarSesionComponent, pathMatch: 'full'},
@@ -42,11 +46,13 @@ export const routes: Routes = [
   {path: 'cursos-inscritos', component: CursosInscritosComponent},
   {path: 'proyectos', component: ProyectosComponent},
   {path: 'nanosatelite', component: NanosateliteComponent},
-  {path: 'componentes', component : Componentes},
+  {path: 'componentes', component : ComponentesComponent},
   {path: 'proyecto-home', component : ProyectoHome},
-  {path: 'simulaciones', component : Componentes},
-  {path: 'editar-proyecto', component : EditarProyecto},
+  {path: 'simulaciones', component : SimulacionComponent},
+  {path: 'editar-proyecto/:codigo', component : EditarProyecto},
   {path: 'registrar-proyecto', component : RegistrarProyecto},
-  {path: 'editar-nanosatelite', component : EditarNanosatelite},
+  {path: 'editar-nanosatelite/:codigo', component : EditarNanosatelite},
   {path: 'registrar-nanosatelite', component : RegistrarNanosatelite},
+  {path: 'registrar-componente', component : AgregarComponenteComponent},
+  {path: 'editar-componente/:codigo', component : EditarComponenteComponent},
 ];

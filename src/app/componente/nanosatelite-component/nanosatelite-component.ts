@@ -1,23 +1,17 @@
 import {Component, inject, ViewChild} from '@angular/core';
 import {Cursos} from '../../model/cursos';
 import {
-  MatCell,
-  MatCellDef,
-  MatColumnDef,
-  MatHeaderCell, MatHeaderCellDef,
-  MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef, MatTable,
+  MatCell, MatCellDef, MatColumnDef, MatHeaderCell,
+  MatHeaderCellDef, MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef, MatTable,
   MatTableDataSource
 } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort, MatSortHeader} from '@angular/material/sort';
-import {CursosService} from '../../services/cursos-service';
 import {Router, RouterLink} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {Nanosatelite} from '../../model/nanosatelite';
-import {MatButton} from '@angular/material/button';
-import {Proyectos} from '../../model/proyecto';
-import {ProyectosService} from '../../services/proyectos-service';
 import {NanosateliteService} from '../../services/Nanosatelite-service';
+import {MatButton} from '@angular/material/button';
 
 
 @Component({
