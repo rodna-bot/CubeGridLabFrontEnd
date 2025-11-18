@@ -12,7 +12,7 @@ export class ProyectosService {
   private httpClient = inject(HttpClient);
   private listaCambio:Subject<Proyectos[]> = new Subject();
   constructor() {}
-  registrar(proyecto: Proyectos) {
+  registrar(proyecto: Partial<Proyectos>) {
     const token = localStorage.getItem('token'); // Obtiene el token guardado
     const headers = { Authorization: `Bearer ${token}` }; // Cabecera JWT estándar
     return this.httpClient.post(`${this.url}/proyecto/registrar`, proyecto, { headers });
@@ -33,5 +33,12 @@ export class ProyectosService {
 
     return this.httpClient.delete(`${this.url}/proyecto/eliminar/${id}`, { headers });
   }
+  buscarporId(id: number): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtiene el token guardado
+    const headers = { Authorization: `Bearer ${token}` }; // Cabecera con el token
+
+    return this.httpClient.get(`${this.url}/proyecto/id/${id}`, { headers });
+  }
+
 
 }

@@ -1,16 +1,21 @@
 import {Usuarios} from './usuarios';
 import {Cursos} from './cursos';
+import {Componentes} from './componentes';
+import {Nanosatelite} from './nanosatelite';
 
 export class Proyectos {
   codigo:number;
 
-  private nombre:string;
+  nombre:string;
 
-  private descripcion:string;
+descripcion:string;
 
-  private fecha_creacion:Date;
+ fecha_creacion:Date;
 
-  private usuarioId:Partial<Usuarios>;
+  cod_usuario:Partial<Usuarios>;
 
-  private cursoId:Partial<Cursos>;
+  cod_curso:Partial<Cursos>;
+
+  cod_nanosatelite:Partial<Nanosatelite>;
+  componentes:Partial<Componentes>[]
 }

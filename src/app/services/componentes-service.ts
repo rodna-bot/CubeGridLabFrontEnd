@@ -22,12 +22,12 @@ export class ComponentesService{
   actualizar(componente:Componentes): Observable<any>  {
     const token = localStorage.getItem('token');
     const headers = {Authorization: `Bearer ${token}`};
-    return this.httpClient.post(`${this.url}/componente/actualizar`,componente,{headers});}
+    return this.httpClient.put(`${this.url}/componente/actualizar`,componente,{headers});}
 
   eliminar(id: number): Observable<any> {
     const token = localStorage.getItem('token'); // Obtiene el token guardado
     const headers = { Authorization: `Bearer ${token}` }; // Cabecera con el token
-    return this.httpClient.delete(`${this.url}/componente/eliminar${id}`, { headers });}
+    return this.httpClient.delete(`${this.url}/componente/eliminar/${id}`, { headers });}
 
   listar(): Observable<Componentes[]> {
     const token = localStorage.getItem('token');

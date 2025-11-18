@@ -11,7 +11,7 @@ import {
 } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort, MatSortHeader} from '@angular/material/sort';
-import {Router, RouterLink} from '@angular/router';
+import {Router, RouterLink, RouterModule} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {ProyectosService} from '../../services/proyectos-service';
 import {MatButton} from '@angular/material/button';
@@ -33,14 +33,15 @@ import {MatButton} from '@angular/material/button';
     MatSort,
     MatSortHeader,
     MatTable,
-    RouterLink
+    RouterLink,
+    RouterModule
   ],
   templateUrl: './proyectos-component.html',
   styleUrl: './proyectos-component.css',
 })
 export class ProyectosComponent {
 lista: Proyectos[] =[];
-displayedColumns: string[] = ['codigo', 'nombre', 'descripcion','fecha-creacion','codigo-usuario','codigo-curso','codigo-nanosatelite'];
+displayedColumns: string[] = ['codigo', 'nombre', 'descripcion','fecha-creacion','codigo-usuario','codigo-curso','codigo-nanosatelite','componentes','accion1'];
 dataSource: MatTableDataSource<Proyectos> = new MatTableDataSource<Proyectos>();
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;
