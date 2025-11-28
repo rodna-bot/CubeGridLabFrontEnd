@@ -1,0 +1,63 @@
+<mat-card class="example-card">
+  <mat-card-title>Editar Proyecto</mat-card-title>
+  <form [formGroup]="proyectoForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del Proyecto</mat-label>
+      <input matInput formControlName="nombre" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput formControlName="descripcion" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha Creacion</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fecha_creacion">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Cursos</mat-label>
+      <mat-select formControlName="cod_curso">
+        <mat-option *ngFor="let curso of cursosAsignados" [value]="curso.codigoCurso">
+          {{ curso.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nanosatelite</mat-label>
+      <mat-select formControlName="cod_nanosatelite">
+        <mat-option *ngFor="let nano of nanosatelites" [value]="nano.codigo">
+          {{ nano.tipo }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+<!--    <mat-form-field appearance="fill">-->
+<!--      <mat-label>Componente</mat-label>-->
+<!--      <mat-select formControlName="componentes">-->
+<!--        <mat-option *ngFor="let comp of componentes" [value]="comp.codigo">-->
+<!--          {{ comp.nombre }}-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+    <div formArrayName="componentes">
+      <mat-label>Componente</mat-label>
+      <div class="checkbox-container">
+        <ng-container *ngFor="let permiso of componentesArray.controls; let i = index" [formGroupName]="i">
+          <mat-checkbox formControlName="seleccionado">
+            {{ permiso.get('nombre')?.value }}
+          </mat-checkbox>
+        </ng-container>
+      </div>
+
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Guardar Proyecto</button>
+  </form>
+</mat-card>

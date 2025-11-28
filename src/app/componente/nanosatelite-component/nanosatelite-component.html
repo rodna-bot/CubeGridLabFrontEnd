@@ -1,0 +1,61 @@
+<div class="container-nanosatelite">
+  <h2>Listado de nanosatelites</h2>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- Código Column -->
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      </ng-container>
+
+      <!-- Username Column -->
+      <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+      </ng-container>
+
+      <!-- Password Column -->
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+      </ng-container>
+
+
+      <!-- Acción: Editar -->
+      <ng-container matColumnDef="accion1">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button [routerLink]="['/editar-nanosatelite', element.codigo]">
+            <span class="material-icons">edit</span>
+          </button>
+
+          <button mat-raised-button (click)="eliminarNanosatelite(element.codigo)">
+            <span class="material-icons">delete</span>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Header y Filas -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <!-- Contenedor flex para paginador y botón -->
+    <div class="paginator-container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+      <!-- Botón agregar curso alineado a la izquierda -->
+      <button mat-raised-button color="primary" [routerLink]="'/registrar-nanosatelite'">
+        <span class="material-icons">book</span> Agregar Nanosatelite
+      </button>
+
+
+      <!-- Paginador alineado a la derecha -->
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

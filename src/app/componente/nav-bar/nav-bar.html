@@ -1,0 +1,23 @@
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row>
+    <span class="toolbar-title">
+      CUBEGRID<span class="green-lab">LAB</span>
+    </span>
+
+    <span class="spacer"></span>
+
+    <nav class="toolbar-buttons">
+      <button mat-raised-button [routerLink]="'/inicio'" class="toolbar-button">Inicio</button>
+      @if (isAdmin) {
+        <button mat-raised-button [routerLink]="'/usuarios'" class="toolbar-button">Usuarios</button>
+      }
+      @if (isAdmin) {
+        <button mat-raised-button [routerLink]="'/cursos'" class="toolbar-button">Cursos</button>
+      }
+      @if (!isAdmin) {
+        <button mat-raised-button [routerLink]="'/cursos-user'" class="toolbar-button">Cursos</button>
+      }
+      <button mat-raised-button [routerLink]="'/proyecto-home'" class="toolbar-button">Proyectos</button>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>

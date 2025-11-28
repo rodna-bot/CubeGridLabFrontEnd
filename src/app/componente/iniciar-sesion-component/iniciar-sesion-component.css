@@ -1,0 +1,111 @@
+/* Contenedor general: centra el card en toda la pantalla */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background: url('../../../assets/imagenes/espacio.png') no-repeat center center/cover;
+}
+.example-card{
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  width: 380px;
+  padding: 2rem;
+  border: solid 1px white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: auto;
+}
+
+/* Título y subtítulo centrados y blancos */
+mat-card-title,
+mat-card-subtitle {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+}
+
+mat-card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+mat-card-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 1.3rem;
+}
+
+/* Formulario: layout vertical */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Full width de los mat-form-field */
+mat-form-field {
+  width: 100%;
+}
+
+/* INPUT: texto en blanco */
+input.mat-input-element,
+input.mat-mdc-input-element {
+  color: #000000 !important;
+}
+
+/* LABELS y placeholder en blanco */
+.mat-mdc-floating-label,
+.mat-mdc-form-field-label {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+/* Outline / borde blanco para appearance="fill" (MDC) */
+.mat-mdc-notched-outline .mdc-notched-outline__leading,
+.mat-mdc-notched-outline .mdc-notched-outline__trailing,
+.mat-mdc-notched-outline .mdc-notched-outline__notch {
+  border-color: rgba(255,255,255,0.9) !important;
+}
+
+/* Si usas la clase legacy (sin MDC), cubrimos también: */
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background: transparent !important;
+}
+
+/* Asegurar que los errores/ayudas no rompan el contraste */
+.mat-mdc-form-field-helper-text {
+  color: rgba(255,255,255,0.8) !important;
+}
+
+/* Botón: fondo blanco y texto negro */
+button[mat-raised-button] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  box-shadow: none !important;
+  transition: background-color .2s ease;
+}
+
+button[mat-raised-button]:hover {
+  background-color: rgba(255, 254, 254, 0.73) !important;
+}
+
+/* Pequeños ajustes responsivos */
+@media (max-width: 420px) {
+  .login-card {
+    width: 92%;
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+}
+
+.register-link{
+  color: #00ffff;
+  text-decoration: underline;
+}

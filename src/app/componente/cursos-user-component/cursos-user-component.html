@@ -1,0 +1,37 @@
+<div class="cursos-container">
+  <h1 class="titulo-principal">Gestión de Cursos</h1>
+
+  <div class="cards-container">
+    <!-- Opción 1: Inscribirse en un curso -->
+    <mat-card class="curso-card" (click)="irAInscribirse()">
+      <img
+        mat-card-image
+        src="https://cdn-icons-png.flaticon.com/512/2995/2995620.png"
+        alt="Inscribirse en curso"
+      />
+      <mat-card-content>
+        <h2>Inscribirse en un Curso</h2>
+        <p>
+          Explora los cursos disponibles y amplía tus conocimientos.
+          Puedes inscribirte fácilmente en los temas que más te interesen.
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Opción 2: Ver cursos inscritos -->
+    <mat-card class="curso-card" (click)="irACursosInscritos()">
+      <img
+        mat-card-image
+        src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png"
+        alt="Cursos inscritos"
+      />
+      <mat-card-content>
+        <h2>Ver Cursos Inscritos</h2>
+        <p>
+          Consulta los cursos en los que ya estás inscrito y revisa tu
+          progreso de aprendizaje de forma rápida y sencilla.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

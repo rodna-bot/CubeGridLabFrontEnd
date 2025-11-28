@@ -1,0 +1,100 @@
+<div class="container-proyectos-componente">
+  <h2>Listado de Proyectos</h2>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- Código Column -->
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      </ng-container>
+
+      <!-- Username Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del proyecto </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <!-- descripcion Column -->
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+      </ng-container>
+
+      <!-- fecha Column -->
+      <ng-container matColumnDef="fecha-creacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de creacion </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecha_creacion}} </td>
+      </ng-container>
+
+      <!-- codigousuario Column -->
+      <ng-container matColumnDef="codigo-usuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre de usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.cod_usuario.username}} </td>
+      </ng-container>
+
+      <!-- codigocurso Column -->
+      <ng-container matColumnDef="codigo-curso">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del curso </th>
+        <td mat-cell *matCellDef="let element"> {{element.cod_curso.nombre}} </td>
+      </ng-container>
+
+      <!-- codigonanosatelite Column -->
+      <ng-container matColumnDef="codigo-nanosatelite">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del nanosatelite </th>
+        <td mat-cell *matCellDef="let element"> {{element.cod_nanosatelite.tipo}} </td>
+      </ng-container>
+
+      <!-- codigocomponente Column -->
+
+      <ng-container matColumnDef="componentes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Componentes </th>
+
+        <td mat-cell *matCellDef="let element">
+         <ul> <li *ngFor="let component of element.componentes">{{component.nombre}} </li>
+           </ul>
+
+         </td>
+      </ng-container>
+
+
+      <!-- Acción: Editar -->
+      <ng-container matColumnDef="accion1">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button [routerLink]="['/editar-proyecto', element.codigo]">
+            <span class="material-icons">edit</span>
+          </button>
+          <button mat-raised-button (click)="eliminarProyecto(element.codigo)">
+            <span class="material-icons">delete</span>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Header y Filas -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <!-- Contenedor flex para paginador y botón -->
+    <div class="paginator-container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+      <!-- Botón agregar curso alineado a la izquierda -->
+      <button mat-raised-button color="primary" [routerLink]="'/registrar-proyecto'">
+        <span class="material-icons">book</span> Registrar proyectos
+      </button>
+
+      <!-- Botón registrar componentes en proyecto a la izquierda -->
+      <button mat-raised-button color="primary" [routerLink]="'/asignar-componente-proyecto'">
+        <span class="material-icons">assignment_ind</span> Asignar componentes
+      </button>
+
+      <!-- Paginador alineado a la derecha -->
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

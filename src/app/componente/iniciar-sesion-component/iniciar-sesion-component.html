@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+  <mat-card-title>Iniciar Sesión</mat-card-title>
+  <mat-card-subtitle>Ingresa tus credenciales para acceder a tu cuenta</mat-card-subtitle>
+  <mat-card-content>
+    <form [formGroup]="loginForm" class="form-container" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="username" placeholder="username" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" placeholder="password" />
+      </mat-form-field>
+
+      <div class="register-text">
+        ¿No tienes una cuenta?
+        <a [routerLink]="'/registrar-usuario'" class="register-link">Regístrate</a>
+      </div>
+
+      <button type="submit" mat-raised-button>Acceder</button>
+    </form>
+  </mat-card-content>
+</mat-card>

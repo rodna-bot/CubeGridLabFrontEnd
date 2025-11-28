@@ -1,0 +1,12 @@
+<div class="inicio-container">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>Innovación espacial en las aulas</h1>
+    @if (isAdmin) {
+      <button [routerLink]="'/cursos'" mat-raised-button class="start-button" >¡EMPIEZA YA!</button>
+    }
+    @if (!isAdmin) {
+      <button [routerLink]="'/cursos-inscritos'" mat-raised-button class="start-button" >¡EMPIEZA YA!</button>
+    }
+  </div>
+</div>
