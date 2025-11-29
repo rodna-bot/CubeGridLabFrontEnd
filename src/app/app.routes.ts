@@ -29,6 +29,7 @@ import {ComponentesComponent} from './componente/componentes-component/component
 import {AgregarComponenteComponent} from './componente/agregar-componente-component/agregar-componente-component';
 import {EditarComponenteComponent} from './componente/editar-componente-component/editar-componente-component';
 import {AsignarComponenteProyecto} from './componente/asignar-componente-proyecto/asignar-componente-proyecto';
+import {SimulacionCreadaComponent} from './componente/simulacion-creada-component/simulacion-creada-component';
 
 export const routes: Routes = [
   {path: '' , component: IniciarSesionComponent, pathMatch: 'full'},
@@ -57,4 +58,5 @@ export const routes: Routes = [
   {path: 'registrar-nanosatelite', component : RegistrarNanosatelite},
   {path: 'registrar-componente', component : AgregarComponenteComponent},
   {path: 'editar-componente/:codigo', component : EditarComponenteComponent},
+  {path: 'simulacion-creada-componente/:codigo', component : SimulacionCreadaComponent},
 ];

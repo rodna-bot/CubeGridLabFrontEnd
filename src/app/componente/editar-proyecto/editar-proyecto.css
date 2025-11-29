@@ -96,3 +96,14 @@ button[mat-raised-button]:hover {
     padding: 1.5rem;
   }
 }
+
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* separación entre items */
+  max-width: 100%;
+}
+
+.checkbox-container mat-checkbox {
+  width: 45%; /* dos columnas */
+}
