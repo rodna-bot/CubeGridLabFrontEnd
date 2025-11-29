@@ -46,5 +46,4 @@ export class ProyectosService {
     return this.httpClient.get(`${this.url}/proyecto/id/${id}`, { headers });
   }
 
-
 }

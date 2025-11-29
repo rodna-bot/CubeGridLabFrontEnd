@@ -30,6 +30,7 @@ import {AgregarComponenteComponent} from './componente/agregar-componente-compon
 import {EditarComponenteComponent} from './componente/editar-componente-component/editar-componente-component';
 import {AsignarComponenteProyecto} from './componente/asignar-componente-proyecto/asignar-componente-proyecto';
 import {SimulacionCreadaComponent} from './componente/simulacion-creada-component/simulacion-creada-component';
+import {ReporteComponent} from './componente/reporte-component/reporte-component';
 
 export const routes: Routes = [
   {path: '' , component: IniciarSesionComponent, pathMatch: 'full'},
@@ -59,4 +60,5 @@ export const routes: Routes = [
   {path: 'registrar-componente', component : AgregarComponenteComponent},
   {path: 'editar-componente/:codigo', component : EditarComponenteComponent},
   {path: 'simulacion-creada-componente/:codigo', component : SimulacionCreadaComponent},
+  {path: 'reporte-component', component : ReporteComponent},
 ];

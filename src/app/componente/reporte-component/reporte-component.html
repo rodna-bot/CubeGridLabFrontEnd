@@ -1,0 +1,38 @@
+<h2 style="text-align:center; margin-top:20px;">Estadísticas Promedio de Simulaciones</h2>
+
+<!-- Gráfico de barras -->
+<div style="width:600px; margin:auto;">
+  <canvas baseChart
+          [datasets]="barChartData.datasets"
+          [labels]="barChartLabels"
+          [options]="barChartOptions">
+  </canvas>
+</div>
+
+<br><br>
+
+<!-- Tabla de datos -->
+<div style="width:600px; margin:auto;">
+  <table border="1" width="100%" style="border-collapse: collapse; text-align:center;">
+    <thead>
+    <tr style="background-color:#f3f3f3;">
+      <th>Indicador</th>
+      <th>Valor promedio</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Costo total promedio</td>
+      <td>{{ reporte?.promedioCosto | number:'1.2-2' }}</td>
+    </tr>
+    <tr>
+      <td>Peso total promedio</td>
+      <td>{{ reporte?.promedioPeso | number:'1.2-2' }}</td>
+    </tr>
+    <tr>
+      <td>Consumo total promedio</td>
+      <td>{{ reporte?.promedioConsumo | number:'1.2-2' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
